@@ -5,4 +5,7 @@ export const HeaderMainContent = styled.div`
   background-color: ${(props) => props.theme.color.bgColor};
   border-top: 1px solid #a1a1a1;
   border-bottom: 1px solid #a1a1a1;
+  max-width: 740px;
+  margin-left: auto;
+  margin-right: auto;
 `;
