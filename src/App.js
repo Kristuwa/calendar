@@ -1,48 +1,24 @@
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import { theme } from "./utils/theme";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { AiOutlinePlus } from "react-icons/ai";
-import {
-  Button,
-  CalendarName,
-  Container,
-  DayText,
-  DaysList,
-  Footer,
-  FooterText,
-  HeaderBottom,
-  HeaderMainContent,
-  HeaderTop,
-  MonthName,
-  NumberDay,
-  TableBody,
-  TableContainer,
-  Td,
-  TimeItem,
-  TimeListSection,
-} from "./App.styled";
-import { Header } from "./components/Header/Header";
+import { Route, Routes } from "react-router-dom";
+import { SharedLayout } from "./components/SharedLayout/SharedLayout";
+import { OneDayPage } from "./pages/OneDayPage";
+import { useState } from "react";
 
 function App() {
+  const [nowDay, setNowDay] = useState(29);
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header />
-      <main>
-        <Container main="main">
-          <TimeListSection>{timeList()}</TimeListSection>
-
-          <TableContainer>
-            <TableBody>{renderRows()}</TableBody>
-          </TableContainer>
-        </Container>
-      </main>
-      <Footer>
-        <Container>
-          <FooterText>Today</FooterText>
-        </Container>
-      </Footer>
+      <Routes>
+        <Route path="/" element={<SharedLayout day={nowDay} />}>
+          <Route index element={<OneDayPage />} />
+          <Route path="/:id" element={<OneDayPage />} />
+          <Route path="*" element={<OneDayPage />} />
+        </Route>
+      </Routes>
     </ThemeProvider>
   );
 }
