@@ -39,15 +39,30 @@ function App() {
         >
           <Route
             index
-            element={<OneDayPage setDeleteButton={setDeleteButton} />}
+            element={
+              <OneDayPage
+                setDeleteButton={setDeleteButton}
+                deleteButton={deleteButton}
+              />
+            }
           />
           <Route
             path="/:id"
-            element={<OneDayPage setDeleteButton={setDeleteButton} />}
+            element={
+              <OneDayPage
+                setDeleteButton={setDeleteButton}
+                deleteButton={deleteButton}
+              />
+            }
           />
           <Route
             path="*"
-            element={<OneDayPage setDeleteButton={setDeleteButton} />}
+            element={
+              <OneDayPage
+                setDeleteButton={setDeleteButton}
+                deleteButton={deleteButton}
+              />
+            }
           />
         </Route>
       </Routes>

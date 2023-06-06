@@ -41,6 +41,10 @@ export const Td = styled.td`
   height: 40px;
   border-right: 1px solid #a1a1a1;
   border-bottom: 1px solid #a1a1a1;
+
+  background-color: ${(props) =>
+    props.active ? props.theme.color.accentColor : "transparent"};
+
   &:last-child {
     border-right: none;
   }
