@@ -5,76 +5,35 @@ export const Container = styled.div`
   max-width: 740px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+
   display: ${(props) => (props.main === "main" ? "flex" : "block")};
 
   @media screen and (min-width: 740px) {
     width: 740px;
-    padding: 0 25px;
+    padding-left: 25px;
+    padding-right: 25px;
   }
-`;
-
-export const HeaderTop = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px 0;
-`;
-
-export const CalendarName = styled.p`
-  font-weight: 600;
-  font-size: 30px;
-`;
-
-export const Button = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  background-color: transparent;
-  border: none;
-  color: ${(props) => props.theme.color.btnColor};
-
-  transition: color 250ms linear;
-
-  &:hover,
-  &:focus {
-    color: ${(props) => props.theme.color.accentColor};
-  }
-`;
-
-export const DaysList = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-`;
-
-export const HeaderBottom = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  margin-bottom: 15px;
 `;
 
 export const TimeListSection = styled.ul`
   display: flex;
   flex-direction: column;
+  padding: 20px 0;
 `;
 
 export const TimeItem = styled.li`
   width: 40px;
   height: 40px;
-`;
-
-export const TableSection = styled.div`
-  width: 100%;
-  padding: 10px 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const TableContainer = styled.table`
   width: 100%;
+  height: 1000px;
   max-width: 650px;
   margin: 0 auto;
   overflow-x: auto;
@@ -88,12 +47,29 @@ export const TableBody = styled.tbody`
 `;
 
 export const Tr = styled.tr`
-  height: 40px;
-  border: 1px solid #a1a1a1;
+  &:last-child {
+    border-bottom: none;
+  }
 `;
 
 export const Td = styled.td`
+  height: 40px;
   width: calc(100% / 12);
   height: 40px;
-  border: 1px solid #a1a1a1;
+  border-right: 1px solid #a1a1a1;
+  border-bottom: 1px solid #a1a1a1;
+  &:last-child {
+    border-right: none;
+  }
+`;
+
+export const Footer = styled.footer`
+  padding: 30px 0;
+  background-color: ${(props) => props.theme.color.bgColor};
+  border-top: 1px solid #a1a1a1;
+`;
+
+export const FooterText = styled.p`
+  color: ${(props) => props.theme.color.secondaryColor};
+  font-size: 20px;
 `;
