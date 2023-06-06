@@ -10,7 +10,7 @@ export const Container = styled.div`
 
   display: ${(props) => (props.main === "main" ? "flex" : "block")};
 
-  @media screen and (min-width: 740px) {
+  @media screen and (min-width: 741px) {
     width: 740px;
     padding-left: 25px;
     padding-right: 25px;

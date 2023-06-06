@@ -5,16 +5,16 @@ import { DaysOfMonth } from "../DaysOfMonth/DaysOfMonth";
 import { TopOfHeader } from "./TopOfHeader/TopOfHeader";
 import { BottomOfHeader } from "./BottomOfHeader/BottomOfHeader";
 
-export const Header = ({ day }) => {
+export const Header = ({ addEvent }) => {
   return (
     <header>
       <Container>
-        <TopOfHeader />
+        <TopOfHeader addEvent={addEvent} />
       </Container>
       <HeaderMainContent>
         <Container>
           <DaysOfWeek />
-          <DaysOfMonth day={day} />
+          <DaysOfMonth />
           <BottomOfHeader />
         </Container>
       </HeaderMainContent>

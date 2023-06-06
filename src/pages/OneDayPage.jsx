@@ -1,11 +1,9 @@
 import { MainContainer } from "../components/MainContainer/MainContainer";
 
-export const OneDayPage = ({ day }) => {
+export const OneDayPage = ({ setDeleteButton }) => {
   return (
-    <>
-      <main>
-        <MainContainer day={day} />
-      </main>
-    </>
+    <main>
+      <MainContainer setDeleteButton={setDeleteButton} />
+    </main>
   );
 };

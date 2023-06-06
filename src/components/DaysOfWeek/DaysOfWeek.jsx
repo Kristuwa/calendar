@@ -1,4 +1,4 @@
-import { daysOfWeek } from "../../data";
+import { daysOfWeek } from "../../helpers/data";
 import { DayText, DaysList } from "./DaysOfWeek.styled";
 
 export const DaysOfWeek = () => {

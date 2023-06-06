@@ -3,14 +3,14 @@ import { Suspense } from "react";
 import { Header } from "../Header/Header";
 import { FooterComponent } from "../FooterComponent/FooterComponent";
 
-export const SharedLayout = ({ day }) => {
+export const SharedLayout = ({ addEvent, deleteButton }) => {
   return (
     <>
-      <Header day={day} />
+      <Header addEvent={addEvent} />
       <Suspense fallback={<div>Loading page...</div>}>
         <Outlet />
       </Suspense>
-      <FooterComponent />
+      <FooterComponent deleteButton={deleteButton} />
     </>
   );
 };

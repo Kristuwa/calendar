@@ -5,18 +5,50 @@ import { Route, Routes } from "react-router-dom";
 import { SharedLayout } from "./components/SharedLayout/SharedLayout";
 import { OneDayPage } from "./pages/OneDayPage";
 import { useState } from "react";
+import { useEffect } from "react";
 
 function App() {
-  const [nowDay, setNowDay] = useState(29);
+  const [event, setEvent] = useState("");
+  const [deleteButton, setDeleteButton] = useState(null);
+
+  useEffect(() => {
+    if (event) {
+      console.log(event);
+    }
+  }, [event]);
+
+  const addEvent = () => {
+    const date = prompt(
+      "http://calendar.com \n Enter event time: \n YYYY-MM-DD HH:mm:ss"
+    );
+    if (date) {
+      setEvent(date);
+    }
+    return;
+  };
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Routes>
-        <Route path="/" element={<SharedLayout day={nowDay} />}>
-          <Route index element={<OneDayPage />} />
-          <Route path="/:id" element={<OneDayPage />} />
-          <Route path="*" element={<OneDayPage />} />
+        <Route
+          path="/"
+          element={
+            <SharedLayout addEvent={addEvent} deleteButton={deleteButton} />
+          }
+        >
+          <Route
+            index
+            element={<OneDayPage setDeleteButton={setDeleteButton} />}
+          />
+          <Route
+            path="/:id"
+            element={<OneDayPage setDeleteButton={setDeleteButton} />}
+          />
+          <Route
+            path="*"
+            element={<OneDayPage setDeleteButton={setDeleteButton} />}
+          />
         </Route>
       </Routes>
     </ThemeProvider>

@@ -6,7 +6,35 @@ export const Footer = styled.footer`
   border-top: 1px solid #a1a1a1;
 `;
 
+export const FooterContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 export const FooterText = styled.p`
   color: ${(props) => props.theme.color.secondaryColor};
   font-size: 20px;
+`;
+
+export const DeleteButton = styled.button`
+  width: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+
+  font-family: inherit;
+  font-size: 20px;
+
+  color: ${(props) => props.theme.color.btnColor};
+
+  transition: color 250ms linear;
+
+  &:hover,
+  &:focus {
+    color: ${(props) => props.theme.color.accentColor};
+  }
 `;

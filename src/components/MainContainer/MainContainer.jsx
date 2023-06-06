@@ -1,17 +1,17 @@
 import { Container } from "../../App.styled";
-import { renderRows, timeList } from "../../data";
+import { renderRows, timeList } from "../../helpers/functions";
 import {
   TableBody,
   TableContainer,
   TimeListSection,
 } from "./MainContainer.styled";
 
-export const MainContainer = () => {
+export const MainContainer = ({ setDeleteButton }) => {
   return (
     <Container main="main">
       <TimeListSection>{timeList()}</TimeListSection>
       <TableContainer>
-        <TableBody>{renderRows()}</TableBody>
+        <TableBody>{renderRows(setDeleteButton)}</TableBody>
       </TableContainer>
     </Container>
   );
